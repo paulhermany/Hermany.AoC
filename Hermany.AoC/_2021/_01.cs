@@ -4,8 +4,8 @@ namespace Hermany.AoC._2021
 {
     public class _01 : ISolution
     {
-        public string P1Assertion { get => string.Empty; }
-        public string P2Assertion { get => string.Empty; }
+        public string P1Assertion { get => "7"; }
+        public string P2Assertion { get => "5"; }
 
         /*
         --- Day 1: Sonar Sweep ---

@@ -5,8 +5,8 @@ namespace Hermany.AoC._2021
 {
     public class _07 : ISolution
     {
-        public string P1Assertion { get => string.Empty; }
-        public string P2Assertion { get => string.Empty; }
+        public string P1Assertion { get => "37"; }
+        public string P2Assertion { get => "168"; }
         /*
         --- Day 7: The Treachery of Whales ---
         A giant whale has decided your submarine is its next meal, and it's much faster than you are. There's nowhere to run!

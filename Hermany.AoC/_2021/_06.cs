@@ -4,8 +4,8 @@ namespace Hermany.AoC._2021
 {
     public class _06 : ISolution
     {
-        public string P1Assertion { get => string.Empty; }
-        public string P2Assertion { get => string.Empty; }
+        public string P1Assertion { get => "5934"; }
+        public string P2Assertion { get => "26984457539"; }
         /*
         --- Day 6: Lanternfish ---
         The sea floor is getting steeper. Maybe the sleigh keys got carried this way?
