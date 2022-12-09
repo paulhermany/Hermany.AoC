@@ -733,35 +733,31 @@ namespace Hermany.AoC._2022
         */
         public string P2(string[] input)
         {
+            // make new list of knots
             var knots = new List<Knot>();
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 10; i++)
                 knots.Add(new Knot(0, 0, i.ToString()));
-            }
 
+            // keep track of tail knot
             var tail = knots[9];
 
+            // keep track of tail positions
             var positions = new HashSet<(int, int)>();
             positions.Add((0, 0));
 
-
             foreach (var instruction in input)
             {
-                var tokens = instruction.Split(' ');
-                var dir = tokens[0];
-                var m = int.Parse(tokens[1]);
+                var _ = instruction.Split(' ');
+                var dir = _[0];
+                var dist = int.Parse(_[1]);
 
-                for (var i = 0; i < m; i++)
-                
+                for (var d = 0; d < dist; d++)
                 {
                     knots[0].Move(dir);
 
-                    for (var j = 1; j < knots.Count; j++)
-                    {
-                        if (Distance(knots[j], knots[j - 1]) > 1)
-                        {
-                            knots[j].MoveToward(knots[j - 1]);
-                        }
-                    }
+                    for (var k = 1; k < knots.Count; k++)
+                        if (Distance(knots[k], knots[k - 1]) > 1)
+                            knots[k].MoveToward(knots[k - 1]);
 
                     if (!positions.Contains((tail.X, tail.Y)))
                         positions.Add((tail.X, tail.Y));
