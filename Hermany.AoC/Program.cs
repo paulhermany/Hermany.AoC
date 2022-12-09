@@ -6,6 +6,18 @@ namespace Hermany.AoC
 {
     class Program
     {
+        /*
+        This is the driver program for all AoC events.
+        The purpose of the driver program is to handle the I/O for all solutions.
+
+        Puzzle input must be placed in:   _[day]-input.txt
+        Test input must be placed in:     _[day]-input-test.txt
+        Solution output is be written to: _[day]-output.txt
+
+        The driver program will first run each solution part and validate against the assertion defined for the solution. If the test passes, the solution part will be run for the primary input.
+
+        If the solution part is not implemented, it will be skipped.
+        */
         static void Main(string[] args)
         {
             // set current year/day
@@ -35,9 +47,11 @@ namespace Hermany.AoC
 
             var output = string.Empty;
 
+            // Part 1
             try
             {
                 sw.Restart();
+                // EXECUTE Part 1 Test
                 output = solution.P1(inputTest);
                 sw.Stop();
 
@@ -55,6 +69,7 @@ namespace Hermany.AoC
                     Console.WriteLine();
 
                     sw.Restart();
+                    // EXECUTE Part 1
                     output = solution.P1(input);
                     sw.Stop();
 
@@ -73,9 +88,11 @@ namespace Hermany.AoC
                 Console.WriteLine();
             }
 
+            // Part 2
             try
             {
                 sw.Restart();
+                // Execute Part 2 Test
                 output = solution.P2(inputTest);
                 sw.Stop();
 
@@ -93,6 +110,7 @@ namespace Hermany.AoC
                     Console.WriteLine();
 
                     sw.Restart();
+                    // Execute Part 2
                     output = solution.P2(input);
                     sw.Stop();
 
