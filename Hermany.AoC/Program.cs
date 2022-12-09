@@ -15,8 +15,8 @@ namespace Hermany.AoC
             // define I/O paths
             var prefixPath = @$"..\..\..\_{currentYear}\_{currentDay}-";
             var inputPath = string.Concat(prefixPath, "input.txt");
-            var part1Path = string.Concat(prefixPath, "part1.txt");
-            var part2Path = string.Concat(prefixPath, "part2.txt");
+            var inputTestPath = string.Concat(prefixPath, "input-test.txt");
+            var outputPath = string.Concat(prefixPath, "output.txt");
 
             // get instance of current solution
             var ns = typeof(Program).Namespace;
@@ -24,33 +24,41 @@ namespace Hermany.AoC
 
             // read input
             var input = File.ReadAllLines(inputPath);
-
+            
             // initialize timer
             var sw = new Stopwatch();
+
+            File.WriteAllText(outputPath, string.Empty);
+            Console.Clear();
+
+            var output = string.Empty;
 
             try
             {
                 sw.Restart();
-                var p1 = solution.P1(input);
+                output= solution.P1(input);
                 sw.Stop();
 
-                File.WriteAllText(part1Path, p1);
-                Console.WriteLine(p1);
-                Console.WriteLine($"Part 1: {sw.Elapsed:g}");
+                File.AppendAllText(outputPath, $"Part 1: {output}\n");
+                File.AppendAllText(outputPath, $"{sw.Elapsed:g}\n");
+                Console.WriteLine($"Part 1: {output}");
+                Console.WriteLine($"{sw.Elapsed:g}");
             }
             catch (NotImplementedException) { }
 
+            File.AppendAllText(outputPath, "\n");
             Console.WriteLine();
 
             try
             {
                 sw.Restart();
-                var p2 = solution.P2(input);
+                output = solution.P2(input);
                 sw.Stop();
 
-                File.WriteAllText(part2Path, p2);
-                Console.WriteLine(p2);
-                Console.WriteLine($"Part 2: {sw.Elapsed:g}");
+                File.AppendAllText(outputPath, $"Part 2: {output}\n");
+                File.AppendAllText(outputPath, $"{sw.Elapsed:g}");
+                Console.WriteLine($"Part 2: {output}");
+                Console.WriteLine($"{sw.Elapsed:g}");
             }
             catch (NotImplementedException) { }
         }
