@@ -7,6 +7,8 @@ namespace Hermany.AoC._2021
 {
     public class _03 : ISolution
     {
+        public string P1Assertion { get => string.Empty; }
+        public string P2Assertion { get => string.Empty; }
         /*
         --- Day 3: Binary Diagnostic ---
         The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.

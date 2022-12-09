@@ -10,7 +10,7 @@ namespace Hermany.AoC
         {
             // set current year/day
             var currentYear = "2022";
-            var currentDay = "09";
+            var currentDay = "10";
             
             // define I/O paths
             var prefixPath = @$"..\..\..\_{currentYear}\_{currentDay}-";
@@ -24,10 +24,12 @@ namespace Hermany.AoC
 
             // read input
             var input = File.ReadAllLines(inputPath);
-            
+            var inputTest = File.ReadAllLines(inputTestPath);
+
             // initialize timer
             var sw = new Stopwatch();
 
+            // create output file
             File.WriteAllText(outputPath, string.Empty);
             Console.Clear();
 
@@ -36,31 +38,78 @@ namespace Hermany.AoC
             try
             {
                 sw.Restart();
-                output= solution.P1(input);
+                output = solution.P1(inputTest);
                 sw.Stop();
 
-                File.AppendAllText(outputPath, $"Part 1: {output}\n");
-                File.AppendAllText(outputPath, $"{sw.Elapsed:g}\n");
-                Console.WriteLine($"Part 1: {output}");
+                Console.WriteLine($"Part 1 Test: {output}");
                 Console.WriteLine($"{sw.Elapsed:g}");
-            }
-            catch (NotImplementedException) { }
 
-            File.AppendAllText(outputPath, "\n");
-            Console.WriteLine();
+                if (output != solution.P1Assertion)
+                {
+                    Console.WriteLine($"Part 1 Test Failed. Expected: {solution.P1Assertion}\n");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine($"Part 1 Test Passed.");
+                    Console.WriteLine();
+
+                    sw.Restart();
+                    output = solution.P1(input);
+                    sw.Stop();
+
+                    File.AppendAllText(outputPath, $"Part 1: {output}\n");
+                    File.AppendAllText(outputPath, $"{sw.Elapsed:g}\n");
+                    File.AppendAllText(outputPath, "\n");
+
+                    Console.WriteLine($"Part 1: {output}");
+                    Console.WriteLine($"{sw.Elapsed:g}");
+                    Console.WriteLine();
+                }
+            }
+            catch (NotImplementedException)
+            {
+                Console.WriteLine($"Part 1 Not Implemented.");
+                Console.WriteLine();
+            }
 
             try
             {
                 sw.Restart();
-                output = solution.P2(input);
+                output = solution.P2(inputTest);
                 sw.Stop();
 
-                File.AppendAllText(outputPath, $"Part 2: {output}\n");
-                File.AppendAllText(outputPath, $"{sw.Elapsed:g}");
-                Console.WriteLine($"Part 2: {output}");
+                Console.WriteLine($"Part 2 Test: {output}");
                 Console.WriteLine($"{sw.Elapsed:g}");
+
+                if (output != solution.P2Assertion)
+                {
+                    Console.WriteLine($"Part 2 Test Failed. Expected: {solution.P2Assertion}\n");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine($"Part 2 Test Passed.");
+                    Console.WriteLine();
+
+                    sw.Restart();
+                    output = solution.P2(input);
+                    sw.Stop();
+
+                    File.AppendAllText(outputPath, $"Part 2: {output}\n");
+                    File.AppendAllText(outputPath, $"{sw.Elapsed:g}");
+                    File.AppendAllText(outputPath, "\n");
+
+                    Console.WriteLine($"Part 2: {output}");
+                    Console.WriteLine($"{sw.Elapsed:g}");
+                    Console.WriteLine();
+                }
             }
-            catch (NotImplementedException) { }
+            catch (NotImplementedException)
+            {
+                Console.WriteLine($"Part 2 Not Implemented.");
+                Console.WriteLine();
+            }
         }
     }
 }

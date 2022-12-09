@@ -4,6 +4,8 @@ namespace Hermany.AoC._2021
 {
     public class _02 : ISolution
     {
+        public string P1Assertion { get => string.Empty; }
+        public string P2Assertion { get => string.Empty; }
         /*
         --- Day 2: Dive! ---
         Now, you need to figure out how to pilot this thing.

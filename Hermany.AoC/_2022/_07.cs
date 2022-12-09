@@ -6,6 +6,9 @@ namespace Hermany.AoC._2022
 {
     public class _07 : ISolution
     {
+        public string P1Assertion { get => "95437"; }
+        public string P2Assertion { get => "24933642"; }
+
         /*
         --- Day 7: No Space Left On Device ---
         You can hear birds chirping and raindrops hitting leaves as the expedition proceeds. Occasionally, you can even hear much louder sounds in the distance; how big do the animals get out here, anyway?

@@ -6,8 +6,9 @@ namespace Hermany.AoC._2022
 {
     public class _01 : ISolution
     {
-        public string P1TestOutput { get => "24000"; }
-        public string P2TestOutput { get => "45000"; }
+        public string P1Assertion { get => "24000"; }
+        public string P2Assertion { get => "45000"; }
+
         /*
         --- Day 1: Calorie Counting ---
         Santa's reindeer typically eat regular reindeer food, but they need a lot of magical energy to deliver presents on Christmas. For that, their favorite snack is a special type of star fruit that only grows deep in the jungle. The Elves have brought you on their annual expedition to the grove where the fruit grows.

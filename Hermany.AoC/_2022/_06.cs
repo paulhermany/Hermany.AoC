@@ -4,6 +4,9 @@ namespace Hermany.AoC._2022
 {
     public class _06 : ISolution
     {
+        public string P1Assertion { get => "7"; }
+        public string P2Assertion { get => "19"; }
+
         /*
         --- Day 6: Tuning Trouble ---
         The preparations are finally complete; you and the Elves leave camp on foot and begin to make your way toward the star fruit grove.

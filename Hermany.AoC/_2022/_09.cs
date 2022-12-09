@@ -7,6 +7,9 @@ namespace Hermany.AoC._2022
 {
     public class _09 : ISolution
     {
+        public string P1Assertion { get => "13"; }
+        public string P2Assertion { get => "1"; }
+
         /*
         --- Day 9: Rope Bridge ---
         This rope bridge creaks as you walk along it. You aren't sure how old it is, or whether it can even support your weight.

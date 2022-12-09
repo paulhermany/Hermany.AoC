@@ -2,6 +2,8 @@ namespace Hermany.AoC._2022
 {
     public class _14 : ISolution
     {
+        public string P1Assertion { get => string.Empty; }
+        public string P2Assertion { get => string.Empty; }
         public string P1(string[] input)
         {
             throw new System.NotImplementedException();
