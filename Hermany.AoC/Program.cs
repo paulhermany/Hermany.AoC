@@ -22,7 +22,7 @@ namespace Hermany.AoC
         {
             // set current year/day
             var currentYear = "2022";
-            var currentDay = "11";
+            var currentDay = "12";
             
             // define I/O paths
             var prefixPath = @$"..\..\..\_{currentYear}\_{currentDay}-";
