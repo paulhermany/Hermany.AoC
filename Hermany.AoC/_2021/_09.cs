@@ -106,8 +106,6 @@ namespace Hermany.AoC._2021
             var map = new int[input.Length * input[0].Length];
 
             var stack = new Stack<(int, int)>();
-            
-            (int, int) current;
 
             var basinIndex = 0;
 
@@ -120,7 +118,7 @@ namespace Hermany.AoC._2021
                     stack.Push((row, col));
                     basinIndex++;
 
-                    while (stack.TryPop(out current))
+                    while (stack.TryPop(out (int, int) current))
                     {
                         var r = current.Item1;
                         var c = current.Item2;
